@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Digital - Farisah Aqilah Azka</title>
+  <link rel="stylesheet" href="modul-2.css">
+</head>
+<body>
+  <main class="page-wrapper">
+    <article class="profile-card">
+      <header class="card-aside">
+        <!-- Tombol untuk mengganti tema halaman -->
+        <button id="btnToggleTema" class="btn-tema">
+          Ganti Mode &#9728;
+        </button>
+        <div class="avatar-box" aria-hidden="true">&#128187;</div>
+        <h1 class="student-name">Farisah Aqilah Azka</h1>
+        <p class="student-role">Junior Web Developer</p>
+        <p class="student-school">SMKN 1 Kepanjen - RPL</p>
+        <a id="btnKontak" href="https://mail.google.com/mail/?view=cm&fs=1&to=kabhita.fz@gmail.com&su=Halo%20Farisah&body=Halo%20Farisah,%20saya%20ingin%20menghubungi%20Anda." class="btn-contact" target="_blank" rel="noopener noreferrer">Kirim Pesan disini!</a>
+      </header>
+
+      <section class="card-content">
+        <div class="bio-section">
+          <h2 class="section-heading">About Me!</h2>
+          <p class="bio-text">Siswa kelas 10 Rekayasa Perangkat Lunak yang berfokus mendalami arsitektur Front-End modern, tata letak CSS Flexbox, serta prinsip Mobile-First Responsive Design standar industri.</p>
+        </div>
+
+        <div class="skills-section">
+          <h2 class="section-heading">Keahlian &amp; Kompetensi</h2>
+          <div class="skill-matrix">
+            <div class="skill-badge">HTML5 Semantic</div>
+            <div class="skill-badge">CSS3 Flexbox</div>
+            <div class="skill-badge">Responsive Design</div>
+            <div class="skill-badge">Media Queries</div>
+            <div class="skill-badge">Chrome DevTools</div>
+            <div class="skill-badge">Git &amp; GitHub (Next)</div>
+          </div>
+        </div>
+
+        <div class="project-section">
+          <h2 class="section-heading">Proyek Pilihan</h2>
+          <div class="project-list">
+            <details class="project-item">
+              <summary>Website Sekolah</summary>
+              <p>Website informasi sekolah yang sederhana dan responsif.</p>
+            </details>
+            <details class="project-item">
+              <summary>Aplikasi To-Do</summary>
+              <p>Aplikasi untuk mencatat tugas harian menggunakan JavaScript.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <!-- Modal popup kontak, tersembunyi secara default -->
+  <div id="modalKontak" class="modal-overlay">
+    <div class="modal-box">
+      <h2>Kirim Pesan</h2>
+      <p>Silakan hubungi saya melalui email: kabhita.fz@gmail.com</p>
+      <button id="btnTutupModal" class="btn-tutup">Tutup</button>
+    </div>
+  </div>
+
+  <script>
+    const btnTema = document.querySelector('#btnToggleTema');
+    const bodyHalaman = document.querySelector('body');
+
+    btnTema.addEventListener('click', function () {
+      bodyHalaman.classList.toggle('light-mode');
+
+      if (bodyHalaman.classList.contains('light-mode')) {
+        btnTema.textContent = 'Mode Gelap 🌙';
+      } else {
+        btnTema.textContent = 'Mode Terang ☀';
+      }
+    });
+
+    const btnBukaModal = document.querySelector('#btnKontak');
+    const elemenModal = document.querySelector('#modalKontak');
+    const btnTutupModal = document.querySelector('#btnTutupModal');
+
+    btnBukaModal.addEventListener('click', function (event) {
+      event.preventDefault();
+      elemenModal.classList.add('show');
+    });
+
+    btnTutupModal.addEventListener('click', function () {
+      elemenModal.classList.remove('show');
+    });
+  </script>
+</body>
+</html>
